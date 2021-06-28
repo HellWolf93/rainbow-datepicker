@@ -1,24 +1,19 @@
+import { Application } from 'react-rainbow-components';
+import { Formik } from 'formik';
 import logo from './logo.svg';
 import './App.css';
+import DateInput from './dateInput';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Application className="App">
+      <Formik initialValues={{ date: new Date() }}>
+        <form>
+          <DateInput name="date" />
+        </form>
+      </Formik>
+    </Application>
   );
 }
 
